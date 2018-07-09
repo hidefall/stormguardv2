@@ -1,0 +1,1003 @@
+/*!
+Theme Name: StormGuard
+Theme URI: http://underscores.me/
+Author: Alex.Y
+Author URI: http://underscores.me/
+Description: Beetroot Test Task
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: stormguard
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+StormGuard is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+// @import "variables-site/variables-site";
+// @import "variables-site/_colors";
+// @import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+// @import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+// @import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+// @import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+// @import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+// @import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+// @import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+// @import "modules/alignments";
+// 
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+// @import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+// @import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+// @import "site/site";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+// @import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+// @import "media/media";
+
+/*--------------------------------------------------------------
+# Bootstrap
+--------------------------------------------------------------*/
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
+// @import "reset";
+// Variables
+#html, body {
+	// margin: 0px !important;
+	padding: 0;
+}
+.form-control, a, button, input {
+	border-radius: 0px !important;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Eurostile LT Std - Demi";
+}
+p {
+	font-family: Helvetica;
+}
+textarea {
+	resize: none;
+}
+$primary_color: #db302c;
+$secondary_color: #ffdd00;
+
+// Buttons 
+.secondary-btn {
+	background-color: $secondary_color;
+	font-family: 'HelveticaBold';
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+	border-radius: 0px;
+	transition: .2s ease-in;
+	&:hover {
+		background: #000;
+		color: #fff;
+	}
+}
+.primary-btn {
+	background-color: $primary_color;
+	font-family: 'HelveticaBold';
+	font-size: 18px;
+	font-weight: bold;
+}
+.main_heading {
+	font-size: 32px;
+	font-family: "Eurostile LT - Demi";
+	font-weight: 400;
+	color: $primary_color;
+	text-align: center;
+}
+.main_description {
+	font-family: Helvetica;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+}
+header #top_bar {
+	background: #000;
+	padding: 10px 0px 12px;
+	.find_location {
+		color: $secondary_color;
+		display: inline;
+		font-size: 14px;
+		cursor: pointer;
+		&:after {
+			content: ' >';
+			font-size: 14px;
+		}
+	}
+	.top_menu {
+		justify-content: flex-end;
+		.top_menu_list {
+			float: right;
+		}
+		ul {
+			list-style-type: none;
+			li {
+				padding: 0px 11px;
+				z-index: 9999;
+			&:hover, &:focus {
+				a{
+					opacity: 0.7;
+				}
+				ul{
+					display: block !important;
+				}
+			}
+				a {
+					text-decoration: none;
+					color: #fff;
+					padding: 0;
+					&.dropdown-item {
+						color: #000;
+						&:focus,&:active {
+							background: transparent;
+						}
+					}
+					
+				}
+				ul {
+					z-index: 99999;
+				}
+				&.current_page_parent, &.current_page_item {
+					& > a {
+						color: $primary_color;
+					}
+					 ul {
+						 li {
+							 &.current_page_item {
+								 a {
+									color: $primary_color; 
+								 }
+							 }
+						 }
+					 }
+				}
+			}
+		}
+	}
+}
+
+.main_navigation{
+	background: rgba(0,0,0,0.7);
+	z-index: 2;
+	ul {
+		justify-content: flex-end;
+		li {
+			&:hover, &:focus {
+				a{
+					opacity: 0.7;
+				}
+				ul{
+					display: block !important;
+				}
+			}
+			a {
+				color: #fff;
+				font-size: 16px;
+			}
+			ul {
+				z-index: 99999;
+			}
+			&.current_page_parent, &.current_page_item {
+				& > a {
+					color: $primary_color;
+				}
+				 ul {
+					 li {
+						 &.current_page_item {
+							 a {
+								color: $primary_color; 
+							 }
+						 }
+					 }
+				 }
+			}
+		}
+	}
+	.header_main_menu  {
+		justify-content: flex-end;
+	}
+}
+.navbar-toggler {
+	border-color: $primary_color;
+}
+.navbar-toggler-icon {
+	content: '-';
+	color: $secondary_color;
+}
+@media screen and(max-width: 994px) {
+	.main_navigation {
+		text-align: center;
+		ul {
+			display: inline;
+		}
+	.navbar-brand {
+		text-align: center;
+		margin: 0 auto;
+		}
+	}
+	header #top_bar .top_menu ul li a {
+		color: #000 !important; 
+	}
+	header #top_bar .top_menu .top_menu_list {
+		float: none;
+		text-align: center;
+	}
+	header #top_bar .top_menu .top_menu_list {
+		background: rgba(238, 244, 240, 0.9);
+		li {
+			a {
+				color: #fff;
+			}
+		}
+	}
+	.header_image {
+		display: none !important;
+	}
+	.breadcrumbs {
+		margin-top: 100px;
+	}
+}
+// @media screen and(min-width: 995px) {
+// 	#mainnav {
+// 		background: #000;
+// 	}
+// }
+
+.navbar-light .navbar-toggler {
+	background: #fff;
+}
+.header_image {
+	position: relative;
+	top: -99px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 559px;
+	z-index: 1;
+	background-size: cover;
+	.contact_heading_block {
+		background: rgba(0,0,0,0.7);
+		color: #fff;
+		z-index: 99999999999;
+		span{
+			color: $secondary_color;
+		}
+		.heading_block_description {
+			font-size: 34px;
+			font-family: "Eurostile LT Std - Demi", sans-serif;
+			white-space: wrap;
+			font-weight: 400;
+			margin-top: 174px;
+			line-height: 1.1em;
+			padding: 63px 0px 0px 30px;
+		}
+		.heading_block_link {
+			margin-left: 21px;
+			font-family: Helvetica;
+			font-size: 16px;
+			font-weight: 700;
+			background: $secondary_color;
+			color: #000;
+			text-decoration: none;
+			padding: 20px 25px;
+			margin-bottom: 36px;
+			display: inline-block;
+			transition: .2s ease-in;
+			width: 203px;
+			&:after {
+				content: url('http://localhost:8080/stormguard/wp-content/themes/stormguard/stormguard/img/shape-2-copy.png');
+				padding-left: 12px;
+			}
+			&:hover {
+				background: rgba(0,0,0,0.7);
+				color: $secondary_color;
+			}
+		}
+	}
+}
+.header_image_second {
+	height: 229px;
+	position: relative;
+	top: -99px;
+}
+// Homepage Styles Here
+.franchise-wrapper {
+	background: $secondary_color;
+	margin-top: -100px;
+	padding: 34px 0px 13px 0px;
+	p {
+		margin: 0px;
+	}
+	.franchise_title {
+		font-size: 38px;
+		line-height: 34px;
+	}
+	.franchise_description {
+		font-size: 16px;
+		font-weight: 700;
+		display: inline-block;
+		margin: 0;
+	}
+	.franchise_location_icon {
+		float: left;
+		margin-right: 25px;
+		pointer-events: none;
+	}
+	.enter_zip {
+
+		@media only screen and (max-width: 992px){
+			text-align: center;
+		}
+
+		.input_zip {
+			padding-right: 0px;
+			input {
+				border-radius: 0px;
+				padding: 5px 0px 5px 3px;
+				line-height: 44px;
+				margin-right: 10px;
+				
+			}
+			@media only screen and (max-width: 992px){
+				margin-bottom: 10px;
+				padding-right: 15px;
+			}
+		}
+		.zip_submit {
+			padding-left: 8px;
+
+			@media only screen and (max-width: 992px){
+				padding-left: 15px;
+			}
+
+			input {
+				border-radius: 0px;
+				font-size: 18px;
+				padding: 0px;
+				width: 100%;
+				max-width: 139px;
+				line-height: 54px;
+				text-align: center;
+				@media only screen and (max-width: 992px){
+					display: block;
+					margin: auto;
+				}
+	
+				_:-ms-fullscreen, :root & { 
+					width: 139px;
+				  }
+			}
+		}
+	}
+}
+.offerings_block {
+	margin-top: 48px;
+	&--bordered {
+		border-bottom: 1px solid #d4d4d4;
+	}
+	.container {
+		border-bottom: 1px solid #d4d4d4;
+	}
+	.main_heading {
+		margin-bottom: 0;
+	}
+	.offer-block {
+		text-align: center;
+		.offering_title {
+			margin-top: 5px;
+			margin-bottom: 10px;
+			font-weight: 700;
+		}
+		.service_link {
+			color: #000;
+			text-decoration: none;
+			.offering_icon {
+				img {
+					transition: transform .25s ease-in-out;
+				}
+			}
+		}
+		.offering_description {
+			margin-top: 0;
+			text-decoration: none;
+		}
+		&:hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+	span {
+		display: block;
+		text-align: center;
+		a.btn {
+			background: $secondary_color;
+			color: #000;
+			text-decoration: none;
+			font-weight: 700;
+			padding: 12px 39px;
+			border-radius: 0px;
+			transition: .2s ease-in;
+			margin-bottom: 37px;
+			
+			&:hover {
+				background: #000;
+				color: #fff;
+			}
+		}
+	}	
+}
+// Get Started Styles
+.get_started {
+	margin-top: 37px;
+	.service_item {
+		margin-bottom: 20px;
+	}
+	.service_overlay {
+		height: 244px;
+		background-size: cover !important;
+	}
+	span {
+		background: $secondary_color;
+		width: 100%;
+		display: inline-block;
+		text-align: left;
+		padding: 12px 0px 9px 18px;
+		a {
+			color: #000;
+			font-weight: 700;
+			text-decoration: none;
+			&:after {
+				content: url('http://localhost:8080/stormguard/wp-content/themes/stormguard/stormguard/img/shape-2-copy.png');
+				padding-left: 10px;
+			}
+		}
+	}
+}
+// Testimonials Section Styles
+.testimonials {
+	margin-top: 52px;
+	background-color: #f7f8f8;
+	.main_heading {
+		padding-top: 50px;
+	}
+	.testimonial_author_wrapper {
+		display: flex;
+		flex-flow: column wrap;
+		align-items: flex-end;
+	}
+	.testimonial {
+		background: #fff;
+		padding: 27px;
+		p {
+			font-style: italic;
+		}
+	}
+	.dots {
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		margin-top: 64px;
+		margin-bottom: 34px;
+		ul {
+			display: inline;
+			list-style-type: none;
+			margin: 0 auto;
+			li {
+				display: inline;
+				margin: 0px 5px;
+				button {
+					border: 1px solid #d7d7d7;
+					border-radius: 7px !important;
+					background: #fff;
+					width: 14px;
+					height: 14px;
+					outline: none;
+					font-size: 0;
+					cursor: pointer;
+				}
+				&.slick-active {
+					button {
+						background: #000;
+					}
+				}
+			}
+		}
+	}
+	.slick-initialized .slick-slide {
+		outline: none;
+	}
+}
+// LATEST NEWS STYLES
+.latest_news {
+	.blog_post {
+		margin-bottom: 20px;
+	}
+	.main_heading {
+		margin-top: 20px;
+	}
+	.news_image {
+		height: 276px;
+	}
+	.article_title {
+		font-family: "Eurostile LT - Demi";
+		font-size: 28px;
+		font-weight: 400;
+	}
+	.article_excerpt {
+		font-family: Helvetica;
+		line-height: 24px;
+		font-size: 16px;
+		font-weight: 400;
+		margin-bottom: 20px;
+		p {
+			display: inline;
+		}
+		.read_more_link {
+			color: $primary_color;
+			margin-left: 4px;
+			text-decoration: underline;
+		}
+	}
+	.article_author {
+		font-family: Helvetica;
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		border: 1px solid #e1e1e1;
+		padding: 6px 16px;
+		display: block;
+	}
+	.more_news {
+		display: block;
+		text-align: center;
+		margin-top: 27px;
+		margin-bottom: 30px;
+		a {
+			padding: 13px 40px;
+		}
+	}
+	.news_date, .news_month {
+		background: $secondary_color;
+		font-size: 16px;
+		font-weight: 400;
+		font-family: "Eurostile LT";
+		margin: 0;
+		width: 61px;
+		padding: 8px 0px 3px 0px;
+		text-align: center;
+		display: block;
+		line-height: 1;
+	}
+	.news_date{
+		font-family: "Eurostile LT - Demi";
+		font-size: 28px;
+		padding: 0 11px 5px;
+		font-weight: 700;
+	}
+}
+// Blog Page Styles 
+.blog {
+	h1.page-title {
+		text-align: center;
+		color: $primary_color;
+		margin-top: 0;
+	}
+}
+// Contact page Styles
+.contact_page {
+	h1 {
+		margin-top: 0;
+	}
+	h1,p{
+		color: $primary_color;
+	}
+	.form-submit {
+		display: inline-block;
+		background: $primary_color;
+		color: #fff;
+		padding: 11px 20px;
+		margin-bottom: 30px;
+		&:hover {
+			background: #000;
+			color: #fff;
+		}
+	}
+}
+// Who we are page styles 
+.who_we_are {
+	.who_we_are_image {
+		margin-top: 26px;
+		margin-bottom: 50px;
+	}
+	.who_we_are_content {
+		border-bottom: 1px solid #d4d4d4;
+	}
+	.franchise-wrapper {
+		margin-top: 27px;
+		padding: 34px 0px 13px 0px;
+	}
+}
+// Footer Styles Here 
+footer {
+	background: $primary_color;
+	color: #fff;
+	margin-top: 30px;
+	.col-md-6 {
+		margin-top: 28px;
+	}
+	.col-md-12 {
+		margin-bottom: 24px;
+	}
+	.past_project_image {
+		display: inline-block;
+		margin: 10px 6px 4px 0px;
+	}
+	img {
+		margin: 0;
+		padding: 0;
+	}
+	.contact_us_title {
+		font-size: 32px;
+		font-family: "Eurostile LT - Demi";
+	}
+	.contact_info {
+		font-family: Helvetica;
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 0px;
+	}
+	.past_projects_title {
+		font-family: "Eurostile LT - Demi";
+		font-size: 32px;
+	}
+	.past_projects_description {
+		font-family: Helvetica;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	.contact_group {
+		font-family: "Helvetica - Oblique";
+		font-size: 16px;
+		color: #ababab;
+		width: 100%;
+		display: inline-block;
+		span {
+			margin: 24px 24px 0px 0px;
+			width: 100%;
+		}
+		input {
+			display: inline-block;
+			width: 100%;
+			max-width: 282px;
+			border: 0;
+		}
+		select {
+			width: 100%;
+		}
+		&--detail {
+			width: 100%;
+			.contact_detail {
+				margin: 24px 24px 0px 0px;
+				width: 100%;
+				display: inline-block;
+			}
+		}
+	}
+	.form-submit {
+		display: inline-block;
+		background: #fff;
+		color: $primary_color;
+		padding: 11px 20px;
+		float: right;
+		margin-bottom: 30px;
+		&:hover {
+			background: #000;
+		}
+	}
+	.more_photos {
+		margin: 12px auto;
+		background: #fff;
+		color: $primary_color;
+	}
+	.form_message {
+		width: 100%;
+		.contact_message {
+			width: 100%;
+			display: block;
+			margin: 24px 24px 0px 0px;
+			padding: 11px 14px;
+
+		}	
+	}
+}
+// Second Footer Styles
+.site-footer {
+	&--second {
+		margin-top: 0px;
+		.contact_info { 
+			margin-bottom: 27px;
+		}
+		a.btn {
+			color: $primary_color;
+			background: #fff;
+			display: inline-block;
+			padding: 13px 15px;
+			margin-bottom: 17px;
+			font-family: Helvetica;
+			font-size: 16px;
+			font-weight: 700;
+			max-width: 387px;
+			width: 100%;
+			&:hover {
+				background: #000;
+			}
+
+		}
+		.past_projects_description {
+			.footer_portfolio_archive_link {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+// Bottom Bar Styles
+.bottom_bar {
+	background: #000;
+	padding: 20px;
+	.copyright {
+		font-size: 12px;
+		font-family: Helvetica;
+		color: #f7f8f8;
+		margin: 0;
+	}	
+}
+// Breadcrumbs Styles 
+.breadcrumbs {
+	border-bottom: 1px solid #d4d4d4;
+	width: 100%;
+	position: relative;
+	top: -85px;
+	span {
+		a {
+			color: $primary_color;
+		}
+	}
+	ul {
+		li {
+			display: inline;
+			padding: 0px 5px;
+			a {
+				color: $primary_color;
+				text-decoration: underline;
+				&:after {
+					content: ' >';
+				}
+			}
+		}
+	}
+}
+// Become Franchise Section 
+.become-franchise {
+	margin-top: 50px;
+	.franchise_title {
+		font-family: "Eurostile LT - Demi";
+	}
+	.franchise_description {
+		font-family: Helvetica;
+	}
+	.become_fr_btn {
+		background: $primary_color;
+		display: inline-block;
+		max-width: 245px;
+		padding: 24px 39px;
+		transition: .2s ease-in-out;
+		cursor: pointer;
+		margin-bottom: 17px;
+		a {
+			color: #fff;
+			text-decoration: none;
+			font-family: Helvetica;
+			font-size: 20px;
+			font-weight: 700;
+		}
+		&:hover {
+			background: #000;
+		}
+	}
+}
+// Single page Styles 
+.franchise {
+	.article_content {
+		font-family: Helvetica;
+		font-size: 16px;
+		line-height: 23px;
+		font-weight: 400;
+		.article_link {
+			color: $primary_color;
+			text-decoration: underline;
+		}
+	}
+	.article_heading {
+		text-align: left;
+		color: $primary_color;
+		padding-top: 13px;
+	}
+	.article_image {
+		margin-top: 26px;
+	}
+}
+
+// Archive Services Styles
+.post-type-archive-services {
+	.offerings_block {
+		margin: 0;
+	}
+}
+// Services Page Styles 
+.services_page	{
+	.service_content {
+		margin-top: -70px;
+	}
+	.col-md-6 {
+		border-bottom: 1px solid #d4d4d4;
+		.article_heading {
+			font-family: "Eurostile LT Std - Demi";
+			font-size: 34px;
+		}
+		.article_img {
+			margin: 15px 0px;
+		}
+	}
+}
+// 404 Page Styles
+
+
+// CF Styles
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
+	border: 1px solid $primary_color;
+	margin: 0;
+	width: 100%;
+}
+.wpcf7-form.invalid {
+	.input_zip input[type=text] {
+		border: 1px solid $primary_color;
+	}
+} 
+
+
+// Wysawig Editor Styles
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+// Page Styles 
+.page {
+	article {
+		margin-top: -100px;
+		p,ul,ol,li {
+		 font-family: Helvetica;
+		 font-size: 16px;
+		 line-height: 23px;
+		 font-weight: 400;
+		}
+		a {
+		 color: $primary_color;
+		 text-decoration: underline;
+		}
+		h1,h2,h3,h4,h5,h6 {
+		  color: $primary_color;
+		  padding-top: 13px;
+		  margin-bottom: 5px;
+		}
+		img {
+		 margin-top: 10px;
+		}
+	}
+}
+// Pagination Styles
+.navigation.pagination {
+	flex: 0 0 100%;
+	align-items: center;
+	justify-content: center;
+	.nav-links {
+		margin-left: 10px;
+		span {
+			display: inline;
+		}
+		a {
+			color: $primary_color;
+		}
+	}
+}
+@media screen and (max-width: 992px) {
+	.page article img {
+		max-width: 100%;
+		height: auto;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 426px) {
+	.site-footer--second a.btn {
+			white-space: normal;
+	}
+}

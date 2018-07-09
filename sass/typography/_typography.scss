@@ -1,0 +1,59 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+}
+
+@import "headings";
+
+@import "copy";
+// Helvetica
+@font-face {
+	font-family: "HelveticaRegular";
+	src: url("../fonts/mainfonts/HelveticaRegular.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "HelveticaBold";
+	src: url("../fonts/mainfonts/HelveticaBold.otf");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Helvetica";
+	src: url("../fonts/mainfonts/HelveticaOb.otf");
+	font-style: oblique;
+	font-weight: normal;
+}
+// Eurostile 
+@font-face {
+	font-family: "EurostileLT";
+	src: url("../fonts/mainfonts/Eurostile-LtDemi.ttf");
+	font-style: bold;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "EurostileLTStd";
+	src: url("../fonts/mainfonts/Eurostile-LT-Std-Demi.ttf");
+	font-style: bold;
+	font-weight: normal;
+}
+.main_heading {
+	font-family: "Eurostile LT - Demi";
+	font-weight: 400;
+	font-size: 32px;
+	color: $primary_color;
+}
+.main_description {
+	font-family: Helvetica;
+	font-size: 16px;
+	font-weight: 400;
+}
