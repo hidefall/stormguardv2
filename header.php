@@ -21,7 +21,6 @@
 
 <body <?php body_class(); ?>>
 <?php
-$emptyB = "";
 	if(is_archive()):
 		$header_bg_image = (get_field('archive_header_image','options')) ? get_field('archive_header_image','options')['sizes']['default_header_image'] : get_template_directory_uri() . '/img/header_image_1.png' ;
 	elseif(is_front_page()):
@@ -114,11 +113,25 @@ if($hero_section_text):
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-	window.addEventListener("resize", function(){
 	var bgImage = '<?php echo $header_bg_image;?>';
-	var emptyBg = '<?php echo $emptyB;?>';
 	var w = 0;
-	var h = 0;
+	w = window.innerWidth
+	if(window.innerWidth < 994) {
+		document.getElementById("mainnav").style.backgroundImage = 'url('+bgImage+')';
+		document.getElementById("mainnav").style.backgroundSize = 'cover';
+		document.getElementById("mainnav").style.backgroundPosition = 'center';
+		document.getElementById("mainnav").style.backgroundRepeat = 'no-repeat';
+		document.querySelector('.header_image_second').style.backgroundImage = null;
+		document.getElementById("mainnav").style.boxShadow = 'inset 0 0 0 2000px rgba(0,0,0,0.7)';
+	}if(window.innerWidth > 994) {
+		document.getElementById("mainnav").style.backgroundImage = null;
+		document.getElementById("mainnav").style.backgroundSize = 'cover';
+		document.getElementById("mainnav").style.backgroundPosition = 'center';
+		document.getElementById("mainnav").style.backgroundRepeat = 'no-repeat';
+		document.querySelector('.header_image_second').style.backgroundImage = 'url('+bgImage+')';
+		document.getElementById("mainnav").style.boxShadow = 'inset 0 0 0 2000px rgba(0,0,0,0.5)';
+	}
+	window.addEventListener("resize", function(){
 	w = window.innerWidth
 	if(window.innerWidth < 994) {
 		document.getElementById("mainnav").style.backgroundImage = 'url('+bgImage+')';
